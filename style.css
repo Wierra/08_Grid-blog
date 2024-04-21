@@ -1,6 +1,6 @@
 /* nejsme vcerejsi, pouzivame moderni box model */
 html { box-sizing: border-box; }
-*, :after, :before { box-sizing: inherit; }
+*, :after, :before { box-sizing: inherit; padding: 0; margin: 0;}
 
 
 body {
@@ -9,6 +9,7 @@ body {
 	font-family:  'Alice', serif;
 	font-size: 18px;
 	line-height: 1.5;
+	width: 100%;
 }
 
 h1, h2, h3 {
@@ -52,17 +53,123 @@ blockquote {
 	:root {
 		--mojebarva: #ff8800;
 	}
-
 	Chci-li potom dál v CSS hodnotu použít, stačí použít funkci var a v závorce název proměnné.Např.:
 	.odstavec {
-		color: var(--mojebarva);
-	}
-
+		color: var(--mojebarva);	}
 	Nemusím si tak pamatovat kódy barev nebo neustále v CSS jezdit nahoru a dolů, abych si je odněkud zkopíroval.
-
 	Více o CSS custom properties:
 	- https://www.w3schools.com/css/css3_variables.asp
 	- https://css-tricks.com/patterns-for-practical-css-custom-properties-use/
-	- https://www.smashingmagazine.com/2017/04/start-using-css-custom-properties/
-*/
+	- https://www.smashingmagazine.com/2017/04/start-using-css-custom-properties/*/
+	
 
+.blog{
+	display: grid;
+	grid-template-columns: 1fr 4fr 2fr;
+	width: 100%;
+	gap: 40px;
+}
+
+header{
+	grid-column: 2;
+	grid-row: 1;
+}
+
+h1{
+	font-size: 120px;
+	color: var(--zelena);
+}
+
+.meta{
+	color: var(--seda);
+	font-size: 26px;;
+}
+
+p{
+	font-size: 20px;
+	grid-column: 2;
+}
+
+.tip.tip-vlevo{ 
+	grid-column: 1;
+	background-color: var(--svetla);
+	border-right: 3px solid var(--zluta);
+	display: flex;
+	flex-wrap: wrap;
+	text-align: right;
+	color: var(--tmava);
+}
+
+.tip.tip-vlevo img{
+	width: 100%;
+	padding: 25px 25px 0 25px;
+}
+
+.tip.tip-vlevo p,
+.tip.tip-vpravo p{
+	padding: 25px;
+	width: 100%;
+}
+
+.tip.tip-vpravo{
+	grid-column: 3;
+	background-color: var(--svetla);
+	color: var(--tmava);
+	border-left: 3px solid var(--oranzova);
+}
+
+.tip.tip-vpravo a{
+	color: var(--oranzova);
+}
+
+figure{
+	grid-column: 1/span3;
+	width: 100%;
+}
+
+blockquote{
+	grid-column: 1/span3;
+	color: var(--seda);
+	font-size: 40px;
+	text-align: center;
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+	align-items: center;
+}
+
+blockquote::after,
+blockquote::before{
+	content: " ";
+	display: block;
+	width: 150px;
+	height: 3px;
+	background-color: var(--limetka);
+	text-align: center;
+	margin: 20px;
+}
+
+h2{
+	grid-column: 2/span3;
+	color: var(--zelena);
+	font-size: 80px;
+}
+
+figcaption{
+	color: var(--seda);
+	font-size: 20px;;
+}
+
+footer{
+	grid-column: 2;
+	color: var(--seda);
+}
+
+
+footer a{
+	color: var(--seda);
+}
+
+img{
+	width: 100%;
+}
