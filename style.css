@@ -98,16 +98,17 @@ p{
 	flex-wrap: wrap;
 	text-align: right;
 	color: var(--tmava);
+	width: 100%;
 }
 
 .tip.tip-vlevo img{
 	width: 100%;
-	padding: 25px 25px 0 25px;
+	padding: 20px 20px 0 20px;
 }
 
 .tip.tip-vlevo p,
 .tip.tip-vpravo p{
-	padding: 25px;
+	padding: 20px;
 	width: 100%;
 }
 
